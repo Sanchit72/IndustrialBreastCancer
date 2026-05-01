@@ -1,121 +1,59 @@
-# IndustrialBreastCancer
-Skip to content
-Sanchit72
-IndustrialBreastCancer
-Repository navigation
-Code
-Issues
-Pull requests
-Agents
-Actions
-Projects
-Wiki
-Security and quality
-Insights
-Settings
-Commit 6004a99
-Sanchit72
-Sanchit72
-authored
-8 minutes ago
-Verified
-Initial commit
-main
-0 parents  commit 
-6004a99
-1 file changed
-
-+1
-Lines changed: 1 addition & 0 deletions
-File tree
-Filter files…
-README.md
-Search within code
- 
-‎README.md‎
-+1
-Lines changed: 1 addition & 0 deletions
-
-
-Original file line number	Diff line number	Diff line change
-@@ -0,0 +1 @@
-# IndustrialBreastCancer
-1 commit comments
-Comments
-1
- (1)
-Sanchit72 commented now
-@Sanchit72
-Sanchit72
-now
-Owner
-Author
 🧠 Breast Cancer Prediction using Machine Learning
-📌 Overview
+📌 Project Overview
 
-This project demonstrates an end-to-end Machine Learning pipeline for predicting breast cancer diagnosis (Benign vs Malignant) using the Breast Cancer Wisconsin dataset.
+This project demonstrates an end-to-end machine learning pipeline for predicting breast cancer diagnosis (Benign vs Malignant) using the Breast Cancer Wisconsin dataset.
 
-It follows industry best practices such as:
+It follows industrial best practices by:
 
-Automated preprocessing using Pipelines
-Handling missing values with SimpleImputer
-Using Random Forest Classifier as a robust baseline model
-Model persistence using Joblib
-Data visualization for better interpretability
-🚀 Features
-End-to-end ML pipeline implementation
-Handles missing data effectively
-High accuracy (~97% on test data)
-Feature importance visualization
-Model saving & loading for reuse
-🛠️ Tech Stack
-Python
-Pandas
-NumPy
-Matplotlib
-Scikit-learn
-Joblib
-📦 Installation
+Automating preprocessing with Pipelines
+Handling missing values using SimpleImputer
+Using Random Forest Classifier as a robust baseline
+Saving & loading trained models using Joblib
+Providing data visualization for interpretability
+📦 Dependencies
 
-Install required dependencies:
+Install the required Python packages before running the project:
 
 pip install pandas numpy matplotlib scikit-learn joblib
 📊 Dataset Information
-Source: Breast Cancer Wisconsin Dataset (UCI ML Repository)
+
+Source: UCI Machine Learning Repository - Breast Cancer Wisconsin Dataset
+
 🔢 Features (10)
-Clump Thickness
-Uniformity of Cell Size
-Uniformity of Cell Shape
-Marginal Adhesion
-Single Epithelial Cell Size
+ClumpThickness
+UniformityCellSize
+UniformityCellShape
+MarginalAdhesion
+SingleEpithelial CellSize
 Bare Nuclei
-Bland Chromatin
-Normal Nucleoli
+BlandChromatin
+NormalNucleoli
 Mitoses
 🎯 Target
-2 → Benign
-4 → Malignant
+2 = Benign
+4 = Malignant
 🔄 Workflow
-
-Data Preparation
-Convert raw dataset to .csv format
+1. Data Preparation
+Convert raw data file to .csv with headers
 Replace missing values (?) with NaN
-Convert all features to numeric types
-Train-Test Split
-70% Training / 30% Testing
-Stratified sampling for balanced classes
-Pipeline Construction
-Step 1: SimpleImputer(strategy="median")
-Step 2: RandomForestClassifier(n_estimators=300)
-Model Training & Evaluation
-Accuracy Score
+Ensure numeric type conversion for all feature columns
+2. Train-Test Split
+Split into 70% training and 30% testing
+Use stratified sampling to preserve class balance
+3. Pipeline Construction
+Step 1: SimpleImputer(strategy="median") for missing values
+Step 2: RandomForestClassifier(n_estimators=300) for classification
+4. Model Training & Evaluation
+Metrics used:
+Accuracy
 Confusion Matrix
 Classification Report
-Model Persistence
+Feature Importance Plot shows most influential features
+5. Model Saving & Loading
 Save model using Joblib
-Load model for future predictions
+Load model for future predictions without retraining
 ▶️ Running the Project
-Step 1: Prepare CSV (Run once)
+Step 1: Prepare CSV (Only Once)
 from breast_cancer_pipeline import data_file_to_csv
 data_file_to_csv()
 Step 2: Train & Evaluate Model
@@ -123,20 +61,21 @@ python breast_cancer_pipeline.py
 📈 Expected Output
 Train Accuracy :: 1.0
 Test Accuracy :: 0.97
+
 Classification Report:
-precision recall f1-score support
+precision    recall    f1-score    support
 ...
 
 Confusion Matrix:
 [[...]]
-Model saved as: bc_rf_pipeline.joblib
-Example Prediction: 2 (Benign) or 4 (Malignant)
+Model saved to: bc_rf_pipeline.joblib
+Loaded model prediction for first test sample: 2
 📊 Visualizations
-Feature Importance Plot (Random Forest)
-Confusion Matrix Visualization
+Feature Importance (Random Forest)
+Confusion Matrix using Matplotlib
 💾 Model Storage
 
-Saved model file:
+The trained model is saved as:
 
 bc_rf_pipeline.joblib
 Load Model Example:
@@ -147,14 +86,9 @@ model = load_model("bc_rf_pipeline.joblib")
 sample = test_x.iloc[[0]]
 pred = model.predict(sample)
 
-print("Prediction:", pred[0])
-
-Output: 2 (Benign) or 4 (Malignant)
+print("Prediction:", pred[0])  
+# Output: 2 (Benign) or 4 (Malignant)
 👨‍💻 Author
 
 Sanchit Ashok Kale
-📅 Date: 01 May 2026
-
-Comment
-You're receiving notifications because you're subscribed to this thread.
-
+📅 Date: 01/05/2026
